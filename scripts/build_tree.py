@@ -183,7 +183,7 @@ def main():
     guide_secs = []
     n_guide = 0
     for sec, ids in D["order"].items():
-        if sec.startswith("track-"):
+        if sec.startswith("track-") or sec.startswith("course-"):
             continue
         meta = D["sections"][sec]
         n_guide += len(ids)
@@ -196,6 +196,24 @@ def main():
                f'<a href="index.html">docs/</a><span class="c"># The guide. '
                f'10 sections, {n_guide} pages</span></summary>'
                '<div class="kids">' + "".join(guide_secs) + "</div></details></div>")
+
+    # the course
+    course_secs, n_course = [], 0
+    for sec, ids in D["order"].items():
+        if not sec.startswith("course-"):
+            continue
+        meta = D["sections"][sec]
+        n_course += len(ids)
+        course_secs.append(branch(
+            sec + "/", "index.html#" + ids[0],
+            f"{meta['title']} · {len(ids)} pages",
+            [row(i.split("/")[1] + ".md", "index.html#" + i, title[i])
+             for i in ids], open_=False))
+    out.append('<div class="sec"><details open><summary>'
+               f'<a href="index.html">docs/course-*/</a><span class="c"># '
+               f'The agents course. 7 modules, {n_course} pages'
+               '</span></summary><div class="kids">'
+               + "".join(course_secs) + "</div></details></div>")
 
     # the tracks
     track_secs, n_track = [], 0
@@ -228,7 +246,8 @@ def main():
 
     counts = (f"{len(sk)} skills · {len(cmd_desc)} commands · "
               f"{len(ag)} subagents · {len(py)} scripts · "
-              f"{n_guide} pages of guide · {n_track} track pages · "
+              f"{n_guide} pages of guide · {n_course} course pages · "
+              f"{n_track} track pages · "
               f"{nlinks} vetted links")
 
     page = TEMPLATE.replace("{{TREE}}", "".join(out)) \

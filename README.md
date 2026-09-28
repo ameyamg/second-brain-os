@@ -100,6 +100,7 @@ them separate matters more than it sounds.
 | Folder | What it holds |
 |---|---|
 | [`docs/`](docs/README.md) | The guide. Ten sections, from the concept to troubleshooting |
+| [`docs/course-*/`](docs/course-0-map/README.md) | The agents course: seven modules, prompt to production |
 | [`docs/track-*/`](docs/track-graph/README.md) | Five compact tracks on the wider craft: graphs, Jev, harnesses, loops, evals |
 | [`vault-template/`](vault-template/) | A starter vault: wiki structure, project pipeline, `CLAUDE.md` and page templates |
 | [`skills/`](skills/README.md) | 18 agent skills, one per workflow in the guide |
@@ -127,6 +128,24 @@ publishing, and what to do when each of them breaks.
 | [Outputs](docs/08-outputs/README.md) | writing, reports, publishing, learning|
 | [Maintenance](docs/09-maintenance/README.md) | linting, review cadence, git, privacy, scaling|
 | [Troubleshooting](docs/10-troubleshooting/README.md) | the failures everyone hits, with fixes|
+
+## The agents course
+
+Seven modules from a single prompt to a production agent, built on Google's
+agent whitepapers and the five-layer frame: what the agent sees, who decides
+the next step, who sorts the incoming work, what it can reach, and how you
+know it works. Theory with sources, a practice page in every module, and a
+day-one plan at the end.
+
+| Module | What it teaches |
+|---|---|
+| [0 · The map](docs/course-0-map/README.md) | what an agent is, the five layers, agents vs workflows |
+| [1 · Context](docs/course-1-context/README.md) | attention, caching, the four places, sessions and memory |
+| [2 · Loop](docs/course-2-loop/README.md) | goal, checker, stop rule, budget; the production hybrid |
+| [3 · The gate](docs/course-3-gate/README.md) | cheap decisions first: classifiers, System One models |
+| [4 · Harness](docs/course-4-harness/README.md) | containment, guides, sensors, permissions |
+| [5 · Evals](docs/course-5-evals/README.md) | behavioural checks on traces, judged judges, golden sets |
+| [6 · Production](docs/course-6-production/README.md) | gateways, tracing, cost, security, the day-one plan |
 
 ## The tracks
 

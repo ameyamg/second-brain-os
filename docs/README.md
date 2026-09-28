@@ -17,6 +17,20 @@ All ten sections are written. The [roadmap](ROADMAP.md) maps every page in one p
 | [Maintenance](09-maintenance/README.md) | linting, review cadence, git, privacy, scaling|
 | [Troubleshooting](10-troubleshooting/README.md) | the failures everyone hits, with fixes|
 
+## The agents course
+
+Seven modules, prompt to production, three lessons each.
+
+| Module | Pages |
+|---|---|
+| [0 · The map](course-0-map/README.md) | 3 |
+| [1 · Context](course-1-context/README.md) | 3 |
+| [2 · Loop](course-2-loop/README.md) | 3 |
+| [3 · The gate](course-3-gate/README.md) | 3 |
+| [4 · Harness](course-4-harness/README.md) | 3 |
+| [5 · Evals](course-5-evals/README.md) | 3 |
+| [6 · Production](course-6-production/README.md) | 3 |
+
 ## The tracks
 
 Separate from the guide: five compact tracks on the wider craft of building

@@ -23,6 +23,54 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 INDEX = os.path.join(ROOT, "index.html")
 
+# the course: seven modules, three lessons each - theory, mechanics, practice.
+# Built on Google's agent whitepapers and the five-layer frame.
+COURSE = {
+    "course-0-map": {
+        "title": "0 · The map",
+        "blurb": "What an agent is, the five layers around the model, and "
+                 "when a workflow beats a loop.",
+        "order": ["what-an-agent-is", "five-layers", "agents-or-workflows"],
+    },
+    "course-1-context": {
+        "title": "1 · Context",
+        "blurb": "What the model sees: attention, caching, the four places, "
+                 "sessions and memory.",
+        "order": ["how-models-read", "the-four-places", "context-practice"],
+    },
+    "course-2-loop": {
+        "title": "2 · Loop",
+        "blurb": "Who decides the next step: goal, checker, stop rule, "
+                 "budget - and the hybrid that survives production.",
+        "order": ["loops-vs-workflows", "the-four-parts", "loop-practice"],
+    },
+    "course-3-gate": {
+        "title": "3 · The gate",
+        "blurb": "Cheap decisions in front of expensive models: classifiers "
+                 "first, System One models where they earn it.",
+        "order": ["cheap-decisions", "gates-in-practice", "gate-practice"],
+    },
+    "course-4-harness": {
+        "title": "4 · Harness",
+        "blurb": "The office around the model: containment, guides, sensors, "
+                 "permissions - built from the outside in.",
+        "order": ["the-office", "the-four-rings", "harness-practice"],
+    },
+    "course-5-evals": {
+        "title": "5 · Evals",
+        "blurb": "The same test every month: behavioural checks on traces, "
+                 "judged judges, golden sets that include failures.",
+        "order": ["two-kinds-of-checks", "judges-and-golden-sets",
+                  "evals-practice"],
+    },
+    "course-6-production": {
+        "title": "6 · Production",
+        "blurb": "From demo to deployed: gateways, tracing, cost, security - "
+                 "and the day-one plan across all five layers.",
+        "order": ["from-prototype", "operating-agents", "day-one-plan"],
+    },
+}
+
 # page order inside each track is editorial, not alphabetical
 TRACKS = {
     "track-graph": {
@@ -80,6 +128,7 @@ MD = markdown.Markdown(extensions=["fenced_code", "tables"])
 
 
 def render_page(sec, fname):
+    meta = COURSE.get(sec) or TRACKS[sec]
     path = os.path.join(ROOT, "docs", sec, fname + ".md")
     src = io.open(path, encoding="utf-8").read().strip()
     lines = src.split("\n")
@@ -100,7 +149,7 @@ def render_page(sec, fname):
         "id": f"{sec}/{fname}",
         "path": f"docs/{sec}/{fname}.md",
         "section": sec,
-        "section_title": TRACKS[sec]["title"],
+        "section_title": meta["title"],
         "title": title,
         "html": html,
         "headings": headings,
@@ -116,15 +165,41 @@ def main():
     j = s.find("</script>", i)
     D = json.loads(s[i:j])
 
-    # replace any previous track entries
-    D["pages"] = [p for p in D["pages"] if not p["section"].startswith("track-")]
-    D["sections"] = {k: v for k, v in D["sections"].items()
-                     if not k.startswith("track-")}
-    D["order"] = {k: v for k, v in D["order"].items()
-                  if not k.startswith("track-")}
+    # replace any previous course and track entries
+    gone = lambda k: k.startswith("track-") or k.startswith("course-")
+    D["pages"] = [p for p in D["pages"] if not gone(p["section"])]
+    D["sections"] = {k: v for k, v in D["sections"].items() if not gone(k)}
+    D["order"] = {k: v for k, v in D["order"].items() if not gone(k)}
 
+    course_cards = build_group(D, COURSE, "course")
+    cards = build_group(D, TRACKS, "track")
+
+    s = s[:i] + json.dumps(D, ensure_ascii=False) + s[j:]
+
+    course_block = ('<!--COURSE--><div class="trkhead"><h2>the agents course</h2>'
+                    '<p>Seven modules from a single prompt to a production '
+                    'agent: theory from the whitepapers, a build in every '
+                    'module. Start at the map, finish with the day-one plan.'
+                    '</p></div><div class="seclist courselist">'
+                    + "".join(course_cards) + "</div><!--/COURSE-->")
+    track_block = ('<!--TRACKS--><div class="trkhead"><h2>tracks</h2>'
+                   '<p>Compact deep-dives beside the main guide: the moving '
+                   'parts of building with agents, a page at a time.</p></div>'
+                   '<div class="seclist tracklist">' + "".join(cards)
+                   + "</div><!--/TRACKS-->")
+    for marker, block in (("COURSE", course_block), ("TRACKS", track_block)):
+        pat = f"<!--{marker}-->.*?<!--/{marker}-->"
+        if re.search(pat, s, re.S):
+            s = re.sub(pat, lambda m: block, s, flags=re.S)
+        else:
+            raise SystemExit(f"no <!--{marker}--> marker in index.html")
+    io.open(INDEX, "w", encoding="utf-8", newline="\n").write(s)
+    print("index.html rewritten")
+
+
+def build_group(D, group, kind):
     cards = []
-    for sec, meta in TRACKS.items():
+    for sec, meta in group.items():
         missing = [f for f in meta["order"]
                    if not os.path.exists(os.path.join(ROOT, "docs", sec, f + ".md"))]
         if missing:
@@ -133,38 +208,25 @@ def main():
         pages = [render_page(sec, f) for f in meta["order"]]
         D["pages"].extend(pages)
         D["sections"][sec] = {"title": meta["title"], "blurb": meta["blurb"],
-                              "track": True}
+                              kind: True}
         D["order"][sec] = [p["id"] for p in pages]
         cards.append(
             f'<article><h3><a href="#{pages[0]["id"]}">{meta["title"]}</a></h3>'
             f'<p>{meta["blurb"]}</p>'
             f'<div class="pg">{len(pages)} pages</div></article>')
-        # a browsable README per track folder, kept in sync with the order
+        # a browsable README per folder, kept in sync with the order
         toc = "\n".join(f"{n}. [{p['title']}]({os.path.basename(p['path'])})"
                         for n, p in enumerate(pages, 1))
+        label = ("A course module" if kind == "course"
+                 else "A compact track") + \
+            " beside [the main guide](../../README.md) — " \
+            "read it on the site or in order below."
         io.open(os.path.join(ROOT, "docs", sec, "README.md"), "w",
                 encoding="utf-8", newline="\n").write(
-            f"# {meta['title']}\n\n{meta['blurb']}\n\n"
-            f"A compact track beside [the main guide](../../README.md) — "
-            f"read it on the site or in order below.\n\n{toc}\n")
+            f"# {meta['title']}\n\n{meta['blurb']}\n\n{label}\n\n{toc}\n")
         print(f"{sec}: {len(pages)} pages, "
               f"{sum(p['words'] for p in pages)} words")
-
-    s = s[:i] + json.dumps(D, ensure_ascii=False) + s[j:]
-
-    block = ('<!--TRACKS--><div class="trkhead"><h2>tracks</h2>'
-             '<p>Compact deep-dives beside the main guide: the moving parts '
-             'of building with agents, a page at a time.</p></div>'
-             '<div class="seclist tracklist">' + "".join(cards)
-             + "</div><!--/TRACKS-->")
-    if "<!--TRACKS-->" in s:
-        s = re.sub(r"<!--TRACKS-->.*?<!--/TRACKS-->", lambda m: block, s,
-                   flags=re.S)
-    else:
-        raise SystemExit("no <!--TRACKS--> marker in index.html; add one "
-                         "after the seclist in the hero")
-    io.open(INDEX, "w", encoding="utf-8", newline="\n").write(s)
-    print("index.html rewritten")
+    return cards
 
 
 if __name__ == "__main__":
