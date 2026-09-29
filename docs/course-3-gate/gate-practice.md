@@ -2,6 +2,9 @@
 
 The discipline in one sentence: before evaluating any vendor, label a few hundred real examples and train a basic classifier. It takes thirty minutes, and it is the baseline every claim must beat on your data before it earns a place in your pipeline.
 
+
+> This audit-and-baseline routine is packaged as a skill: install [the course plugin](../../plugins/README.md) and run `/agents-course:gate-check` on your pipeline.
+
 ## Label two hundred real examples
 
 Pull the last 200 items from the stream your agent actually processes — not synthetic examples, not someone's public dataset. Use three labels:

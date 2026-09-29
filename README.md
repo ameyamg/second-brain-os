@@ -149,8 +149,9 @@ day-one plan at the end.
 | [6 · Production](docs/course-6-production/README.md) | gateways, tracing, cost, security, the day-one plan |
 
 The course ships its own tools as a [Claude Code plugin](plugins/README.md) —
-a context auditor, a goal-test generator, an evals bootstrapper and a loop
-critic, each doing one module's practice page in your repo:
+a context auditor, a goal-test generator, a gate finder, a harness auditor,
+an evals bootstrapper and a loop critic, each doing one module's practice
+page in your repo:
 
 ```bash
 claude plugin marketplace add undefined-ui/second-brain-os
