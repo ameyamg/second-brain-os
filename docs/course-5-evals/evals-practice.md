@@ -119,3 +119,5 @@ Every week, pull five random real runs and grade them by hand against your own e
 3. Break the refund behaviour deliberately, and confirm the aggregate barely moves while the individual check goes red.
 
 Next module: [from prototype to production](../course-6-production/from-prototype.md).
+
+Go deeper → the [eval engineering handbook](../track-evals/why-evals.md): designing evals, judges that do not lie, agent trajectories, and a CI-gated suite.

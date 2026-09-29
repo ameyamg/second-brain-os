@@ -22,7 +22,7 @@ Kill your agent mid-task and everything is gone; the transcript lived in a Pytho
 
 ## The decision rule
 
-Build your own when at least one of these is true: you are learning (the reason this track exists); the loop itself is your product and you need to own every line; or the task is narrow enough — two or three tools, short sessions, a human present — that 150 lines genuinely cover it. Plenty of useful internal tools live happily at that size.
+Build your own when at least one of these is true: you are learning (the reason this handbook exists); the loop itself is your product and you need to own every line; or the task is narrow enough — two or three tools, short sessions, a human present — that 150 lines genuinely cover it. Plenty of useful internal tools live happily at that size.
 
 Adopt a harness the moment any of these becomes true: the agent runs unattended; it reads untrusted content (web pages, emails, other people's code); sessions run long enough that compaction quality decides success; or you catch yourself building a permission system in earnest. Each of those is months of unglamorous engineering that Anthropic and others have already done, tested against failure modes you have not met yet. Rebuilding it is not rigour, it is expense.
 

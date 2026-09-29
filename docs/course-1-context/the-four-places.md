@@ -42,4 +42,4 @@ Google's [Sessions & Memory whitepaper](https://www.kaggle.com/whitepaper-contex
 
 ## Compacting the window
 
-For the live session the whitepaper names three strategies, in rising sophistication: keep the last N turns (a sliding window), token-based truncation (fill a budget newest-first), and recursive summarisation (replace older turns with a rolling summary prefixed to recent verbatim ones). Trigger compaction on a count threshold, on inactivity, or on task completion. The loop track's [context hygiene](../track-loop/context-hygiene.md) page goes deeper on compaction inside long-running loops.
+For the live session the whitepaper names three strategies, in rising sophistication: keep the last N turns (a sliding window), token-based truncation (fill a budget newest-first), and recursive summarisation (replace older turns with a rolling summary prefixed to recent verbatim ones). Trigger compaction on a count threshold, on inactivity, or on task completion. The loop handbook's [context hygiene](../track-loop/context-hygiene.md) page goes deeper on compaction inside long-running loops.

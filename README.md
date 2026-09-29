@@ -11,6 +11,12 @@ nothing to install beyond Obsidian and an agent.
 
 **Read it on the web:** [undefined-ui.github.io/second-brain-os](https://undefined-ui.github.io/second-brain-os/) — the full guide with search and navigation, plus [every vetted link](https://undefined-ui.github.io/second-brain-os/resources.html) in one filterable page.
 
+Three things live here — pick your entrance:
+
+- **[The second-brain guide](#the-guide)** — a knowledge base an agent maintains for you: 65 pages, a starter vault, 18 skills.
+- **[The agents course](#the-agents-course)** — seven modules from a single prompt to a production agent, with [tools you install in two commands](plugins/README.md).
+- **[The handbooks](#the-handbooks)** — five compact references on the wider craft: graphs, Jev, harnesses, loops, evals.
+
 ## The problem it solves
 
 You save things with the intention of coming back. You never do. Bookmarks,
@@ -101,7 +107,7 @@ them separate matters more than it sounds.
 |---|---|
 | [`docs/`](docs/README.md) | The guide. Ten sections, from the concept to troubleshooting |
 | [`docs/course-*/`](docs/course-0-map/README.md) | The agents course: seven modules, prompt to production |
-| [`docs/track-*/`](docs/track-graph/README.md) | Five compact tracks on the wider craft: graphs, Jev, harnesses, loops, evals |
+| [`docs/track-*/`](docs/track-graph/README.md) | Five handbooks on the wider craft: graphs, Jev, harnesses, loops, evals |
 | [`vault-template/`](vault-template/) | A starter vault: wiki structure, project pipeline, `CLAUDE.md` and page templates |
 | [`skills/`](skills/README.md) | 18 agent skills, one per workflow in the guide |
 | [`commands/`](commands/README.md) | 72 slash commands, scoped entry points into those skills |
@@ -158,14 +164,14 @@ claude plugin marketplace add undefined-ui/second-brain-os
 claude plugin install agents-course@second-brain-os
 ```
 
-## The tracks
+## The handbooks
 
-Everything above is the second brain. The tracks are the wider craft of
+Everything above is the second brain. The handbooks are the wider craft of
 building with agents — separate subjects, deliberately compact: eight or nine
 pages each, current as of September 2026, and every one ends in a hands-on
 build you can finish in an evening.
 
-| Track | What it covers | The build |
+| Handbook | What it covers | The build |
 |---|---|---|
 | [Knowledge graphs](docs/track-graph/README.md) | GraphRAG, extraction pipelines, stores, wikilinks-as-graph | a queryable graph layer over your own vault |
 | [Jev engineering](docs/track-jev/README.md) | System One models: typed decisions with confidence instead of text | a confidence-gated router, ready for Jev when access lands |
@@ -173,7 +179,7 @@ build you can finish in an evening.
 | [Loop engineering](docs/track-loop/README.md) | stop conditions, critics, context hygiene, unattended runs | an overnight loop with a ratchet and a morning report |
 | [Eval engineering](docs/track-evals/README.md) | golden sets, LLM judges, agent trajectories, CI gates | your first eval suite, wired into CI |
 
-Read them on the site: [tracks on undefined-ui.github.io](https://undefined-ui.github.io/second-brain-os/).
+Read them on the site: [handbooks on undefined-ui.github.io](https://undefined-ui.github.io/second-brain-os/).
 
 ## Design decisions
 

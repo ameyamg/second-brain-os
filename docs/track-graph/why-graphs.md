@@ -2,6 +2,9 @@
 
 An agent's memory problem is not storage. It is that facts arrive connected and get stored flat. A knowledge graph keeps the connections: entities as nodes, relationships as typed edges, so that "what does X have to do with Y" is a walk rather than a guess.
 
+
+This handbook is about graphs as agent memory in general; the second-brain guide's own [graphs section](../05-graphs/graph-basics.md) covers the vault-specific side — wikilinks as edges, typed links, Obsidian's graph view.
+
 ## What vector RAG cannot do
 
 Embedding retrieval answers one shape of question well: "find me passages that sound like this". It fails predictably on two others.

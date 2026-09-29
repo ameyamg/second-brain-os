@@ -2,7 +2,7 @@
 
 Measurement as the discipline of AI products: golden sets, judges that do not lie, agent trajectories — and your first suite built in an afternoon.
 
-A compact track beside [the main guide](../../README.md) — read it on the site or in order below.
+A compact handbook beside [the main guide](../../README.md) — read it on the site or in order below.
 
 1. [Why Evals](why-evals.md)
 2. [Designing Evals](designing-evals.md)

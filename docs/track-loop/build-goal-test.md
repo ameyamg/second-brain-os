@@ -1,6 +1,6 @@
 # Build: the Goal Test
 
-Three build pages assemble a working loop around a headless coding agent. This one delivers the skeleton: define done as a script, run the agent, run the goal test, feed failures back, cap the attempts. The examples drive Claude Code's non-interactive mode (`claude -p`), the reference harness from [the harness track](../track-harness/claude-code-as-harness.md), but any CLI agent that takes a prompt and edits files will slot in.
+Three build pages assemble a working loop around a headless coding agent. This one delivers the skeleton: define done as a script, run the agent, run the goal test, feed failures back, cap the attempts. The examples drive Claude Code's non-interactive mode (`claude -p`), the reference harness from [the harness handbook](../track-harness/claude-code-as-harness.md), but any CLI agent that takes a prompt and edits files will slot in.
 
 You need `claude` and `jq` on your path, and a repo with a test suite. The flags below are current as of September 2026: `-p` runs one non-interactive session, `--allowedTools` pre-approves tools using permission rule syntax (the trailing ` *` is prefix matching), `--permission-mode acceptEdits` lets it write files without prompting, and `--output-format json` returns the result with metadata including `total_cost_usd`.
 

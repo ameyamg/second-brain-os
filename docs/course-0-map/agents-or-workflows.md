@@ -20,12 +20,12 @@ So the ladder runs: one model call, then a workflow, then a single agent, then m
 
 ## How to take this course
 
-In order, and with something to build. This module is the map: what an agent actually is, the five-layer frame, and this decision. Modules 1 through 5 then take one layer each, in the order the questions arise — what it sees, who decides, who sorts, what it can reach, how you know. Each module gives you working defaults; the deep-dive tracks carry the reasoning behind them, and you can descend into a track the moment its layer starts hurting in your own system. Read [what an agent is](what-an-agent-is.md) and [five layers, one system](five-layers.md) before anything else; the rest will keep.
+In order, and with something to build. This module is the map: what an agent actually is, the five-layer frame, and this decision. Modules 1 through 5 then take one layer each, in the order the questions arise — what it sees, who decides, who sorts, what it can reach, how you know. Each module gives you working defaults; the deep-dive handbooks carry the reasoning behind them, and you can descend into a handbook the moment its layer starts hurting in your own system. Read [what an agent is](what-an-agent-is.md) and [five layers, one system](five-layers.md) before anything else; the rest will keep.
 
 - Module 0 — the map: this page and its two companions
 - [Module 1 — context](../course-1-context/how-models-read.md): [how models read](../course-1-context/how-models-read.md)
-- [Module 2 — the loop](../course-2-loop/loops-vs-workflows.md), with its track [what loop engineering is](../track-loop/what-loop-engineering-is.md)
-- [Module 3 — the gate](../course-3-gate/cheap-decisions.md), with its track [system-one models](../track-jev/system-one-models.md)
-- [Module 4 — the harness](../course-4-harness/the-office.md), with its track [what a harness is](../track-harness/what-a-harness-is.md)
-- [Module 5 — evals](../course-5-evals/two-kinds-of-checks.md), with its track [why evals](../track-evals/why-evals.md)
+- [Module 2 — the loop](../course-2-loop/loops-vs-workflows.md), with its handbook [what loop engineering is](../track-loop/what-loop-engineering-is.md)
+- [Module 3 — the gate](../course-3-gate/cheap-decisions.md), with its handbook [system-one models](../track-jev/system-one-models.md)
+- [Module 4 — the harness](../course-4-harness/the-office.md), with its handbook [what a harness is](../track-harness/what-a-harness-is.md)
+- [Module 5 — evals](../course-5-evals/two-kinds-of-checks.md), with its handbook [why evals](../track-evals/why-evals.md)
 - [Module 6 — production](../course-6-production/from-prototype.md): from demo to deployed, and the day-one plan

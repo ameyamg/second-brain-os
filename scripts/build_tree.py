@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate tree.html - the full component tree as one interactive page.
 
-Every line is a hyperlink: guide and track pages route into the site,
+Every line is a hyperlink: guide and handbook pages route into the site,
 code artefacts route to GitHub. Descriptions come from the artefacts
 themselves (frontmatter, docstrings, page titles), so a rerun stays true.
 
@@ -254,7 +254,7 @@ def main():
              for i in ids], open_=False))
     out.append('<div class="sec"><details open><summary>'
                f'<a href="index.html">docs/track-*/</a><span class="c"># '
-               f'Five compact tracks, {n_track} pages, each ends in a build'
+               f'Five handbooks, {n_track} pages, each ends in a build'
                '</span></summary><div class="kids">'
                + "".join(track_secs) + "</div></details></div>")
 
@@ -273,7 +273,7 @@ def main():
               f"{len(ag)} subagents · {n_plug_tools} plugin tools · "
               f"{len(py)} scripts · "
               f"{n_guide} pages of guide · {n_course} course pages · "
-              f"{n_track} track pages · "
+              f"{n_track} handbook pages · "
               f"{nlinks} vetted links")
 
     page = TEMPLATE.replace("{{TREE}}", "".join(out)) \
@@ -286,7 +286,7 @@ def main():
 TEMPLATE = """<!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The full component tree - Second Brain OS</title>
-<meta name="description" content="Every component in second-brain-os on one page: the guide, five tracks, skills, commands, agents, scripts and resources, each line a link.">
+<meta name="description" content="Every component in second-brain-os on one page: the guide, five handbooks, skills, commands, agents, scripts and resources, each line a link.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23F7F9F6'/%3E%3Crect x='.5' y='.5' width='31' height='31' rx='6.5' fill='none' stroke='%23D2DACF'/%3E%3Cpath d='M10 21 L16 11 L22 19 M16 11 L23 9' stroke='%231F6B52' stroke-width='1.6' fill='none'/%3E%3Ccircle cx='10' cy='21' r='3' fill='%23F7F9F6' stroke='%231F6B52' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='11' r='3' fill='%23F7F9F6' stroke='%231F6B52' stroke-width='1.6'/%3E%3Ccircle cx='22' cy='19' r='3' fill='%23F7F9F6' stroke='%231F6B52' stroke-width='1.6'/%3E%3Ccircle cx='24' cy='8' r='2' fill='%231F6B52'/%3E%3C/svg%3E">
 <style>
 :root{--paper:#EAEEE9;--card:#F7F9F6;--ink:#15201B;--soft:#4B5A52;--faint:#7C8A82;

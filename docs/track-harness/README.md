@@ -2,7 +2,7 @@
 
 The machinery around the model: loops, tools, context engineering, the landscape — and a working harness in an evening, about 150 lines.
 
-A compact track beside [the main guide](../../README.md) — read it on the site or in order below.
+A compact handbook beside [the main guide](../../README.md) — read it on the site or in order below.
 
 1. [What a Harness Is](what-a-harness-is.md)
 2. [Claude Code as Harness](claude-code-as-harness.md)

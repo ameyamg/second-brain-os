@@ -6,7 +6,7 @@ Loop engineering is the discipline of designing the control system that runs an 
 
 On 7 June 2026 Peter Steinberger posted the line that named the shift: "You shouldn't be prompting coding agents anymore. You should be designing loops that prompt your agents." It was viewed millions of times within a day. Addy Osmani's essay "Loop Engineering" followed almost immediately (O'Reilly Radar syndicated it on 22 June), giving the idea an anatomy: automations, worktrees, skills, connectors, subagents, and external state so progress survives between runs. Boris Cherny of Anthropic put it bluntly: "I don't prompt Claude anymore. I have loops running that prompt Claude... My job is to write loops."
 
-The practices are older than the name. Geoffrey Huntley's Ralph loop dates from July 2025; Simon Willison wrote "Designing agentic loops" that September, defining an agent as something that "runs tools in a loop to achieve a goal". June 2026 is simply when the discipline got a label — it is three months old as this track is written, so expect the vocabulary to churn.
+The practices are older than the name. Geoffrey Huntley's Ralph loop dates from July 2025; Simon Willison wrote "Designing agentic loops" that September, defining an agent as something that "runs tools in a loop to achieve a goal". June 2026 is simply when the discipline got a label — it is three months old as this handbook is written, so expect the vocabulary to churn.
 
 ## Prompt engineering versus loop engineering
 
@@ -21,4 +21,4 @@ Hand-prompting spends your judgement one turn at a time: you read the output, de
 
 ## Not the same thing as a harness
 
-This site already has a track on [agent harnesses](../track-harness/what-a-harness-is.md) — the machinery around the model: the inner while-loop, tool schemas, permissions, context window management. Loop engineering is the control discipline layered on top of that machinery. The harness executes a turn; the loop decides whether there should be a next turn, what it should attempt, who judges it, and when the whole exercise ends. You need both: a good harness with no loop discipline is a very fast way to produce unverified work, and loop discipline without a decent harness has nothing reliable to steer.
+This site already has a handbook on [agent harnesses](../track-harness/what-a-harness-is.md) — the machinery around the model: the inner while-loop, tool schemas, permissions, context window management. Loop engineering is the control discipline layered on top of that machinery. The harness executes a turn; the loop decides whether there should be a next turn, what it should attempt, who judges it, and when the whole exercise ends. You need both: a good harness with no loop discipline is a very fast way to produce unverified work, and loop discipline without a decent harness has nothing reliable to steer.

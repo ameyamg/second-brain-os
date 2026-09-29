@@ -185,8 +185,8 @@ def main():
                     'module. Start at the map, finish with the day-one plan.'
                     '</p></div><div class="seclist courselist">'
                     + "".join(course_cards) + "</div><!--/COURSE-->")
-    track_block = ('<!--TRACKS--><div class="trkhead"><h2>tracks</h2>'
-                   '<p>Compact deep-dives beside the main guide: the moving '
+    track_block = ('<!--TRACKS--><div class="trkhead"><h2>handbooks</h2>'
+                   '<p>Compact references beside the main guide: the moving '
                    'parts of building with agents, a page at a time.</p></div>'
                    '<div class="seclist tracklist">' + "".join(cards)
                    + "</div><!--/TRACKS-->")
@@ -221,7 +221,7 @@ def build_group(D, group, kind):
         toc = "\n".join(f"{n}. [{p['title']}]({os.path.basename(p['path'])})"
                         for n, p in enumerate(pages, 1))
         label = ("A course module" if kind == "course"
-                 else "A compact track") + \
+                 else "A compact handbook") + \
             " beside [the main guide](../../README.md) — " \
             "read it on the site or in order below."
         io.open(os.path.join(ROOT, "docs", sec, "README.md"), "w",

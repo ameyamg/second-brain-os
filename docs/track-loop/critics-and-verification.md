@@ -14,7 +14,7 @@ Reach for deterministic critics first: the test suite, the type checker, the lin
 
 Some judgements code cannot make: is the diff minimal, is the error handling real or decorative, did the change stay inside the task. For these, use a second model call as critic — but narrow it ruthlessly. A good critic prompt names three to five checkable rules, demands a structured verdict (PASS, or a list of violations with locations and fixes), and explicitly forbids commentary on anything else. Wide-rubric "review this code" critics produce plausible noise, and the next attempt burns its budget chasing style opinions instead of defects.
 
-LLM critics inherit every failure mode documented for [LLM-as-judge in the evals track](../track-evals/llm-as-judge.md): leniency bias, verbosity preference, and self-preference. The last one matters most here — never let the model grade its own work in the same context. The critic gets a fresh context, sees only the diff and the rubric, and ideally is a different model. [Build: the critic](build-critic.md) wires exactly this between attempts.
+LLM critics inherit every failure mode documented for [LLM-as-judge in the evals handbook](../track-evals/llm-as-judge.md): leniency bias, verbosity preference, and self-preference. The last one matters most here — never let the model grade its own work in the same context. The critic gets a fresh context, sees only the diff and the rubric, and ideally is a different model. [Build: the critic](build-critic.md) wires exactly this between attempts.
 
 ## Verifier asymmetry
 

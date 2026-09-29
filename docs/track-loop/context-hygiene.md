@@ -1,6 +1,6 @@
 # Context Hygiene
 
-The harness track covers [context engineering](../track-harness/context-engineering.md): what the model sees within a session, curated turn by turn. Context hygiene is the loop-level version of the same discipline: what survives between turns and between attempts, and — just as important — what gets deliberately destroyed. The harness manages a window; the loop manages a lifecycle.
+The harness handbook covers [context engineering](../track-harness/context-engineering.md): what the model sees within a session, curated turn by turn. Context hygiene is the loop-level version of the same discipline: what survives between turns and between attempts, and — just as important — what gets deliberately destroyed. The harness manages a window; the loop manages a lifecycle.
 
 ## Editing within long runs
 

@@ -2,6 +2,9 @@
 
 Most AI products today are built on large language models: you send text in, the model writes text back, one token at a time. That is slow and expensive when all your software actually needs is a decision. "System One models" are a new category — introduced by TypeSafe AI on 15 September 2026 with a model called Jev — built for exactly that gap: fast typed decisions instead of slow text generation.
 
+
+The course side of this subject is [Module 3: cheap decisions](../course-3-gate/cheap-decisions.md) — the gate pattern this class of models usually serves.
+
 ## The Kahneman framing
 
 The name borrows from Daniel Kahneman's *Thinking, Fast and Slow*. System 1 is fast, intuitive judgement; System 2 is slow, deliberate reasoning. LLMs, in this framing, are System 2 machines: they reason out loud, in prose. TypeSafe's pitch is that a large share of what software asks a model to do — classify, route, score, gate — is System 1 work, and paying LLM latency and cost for it is waste. Their founder, Diogo Almeida (ex-OpenAI, worked on RLHF and ChatGPT), calls it "a frontier-intelligence function call: unstructured state in, typed probabilistic decisions out".

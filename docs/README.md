@@ -31,12 +31,12 @@ Seven modules, prompt to production, three lessons each.
 | [5 · Evals](course-5-evals/README.md) | 3 |
 | [6 · Production](course-6-production/README.md) | 3 |
 
-## The tracks
+## The handbooks
 
-Separate from the guide: five compact tracks on the wider craft of building
+Separate from the guide: five compact handbooks on the wider craft of building
 with agents, each ending in a hands-on build.
 
-| Track | Pages |
+| Handbook | Pages |
 |---|---|
 | [Knowledge graphs](track-graph/README.md) | 9 |
 | [Jev engineering](track-jev/README.md) | 8 |

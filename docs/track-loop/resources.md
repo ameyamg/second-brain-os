@@ -6,7 +6,7 @@ A health warning first: "loop engineering" was coined in June 2026 and is three 
 
 - [Peter Steinberger's post](https://x.com/steipete/status/2063697162748260627) — the line that caught, June 2026: "You shouldn't be prompting coding agents anymore. You should be designing loops that prompt your agents."
 - [Loop Engineering](https://www.oreilly.com/radar/loop-engineering/) — Addy Osmani's essay, syndicated on O'Reilly Radar. The anatomy: automations, worktrees, skills, connectors, subagents, external state — and the honest closing warnings about verification burden and comprehension debt.
-- [Code review in the age of AI](https://addyosmani.com/blog/code-review-ai/) — Osmani's companion piece; "your job is to ship code you confirmed works" is this track in nine words.
+- [Code review in the age of AI](https://addyosmani.com/blog/code-review-ai/) — Osmani's companion piece; "your job is to ship code you confirmed works" is this handbook in nine words.
 - [What is loop engineering?](https://www.ibm.com/think/topics/loop-engineering) — IBM's topic page; useful as the sober institutional definition, strong on the risks (comprehension debt, intent debt, cognitive surrender).
 
 ## Papers
@@ -16,8 +16,8 @@ A health warning first: "loop engineering" was coined in June 2026 and is three 
 
 ## Anthropic material
 
-- [Managing context on the Claude Developer Platform](https://claude.com/blog/context-management) — context editing and the memory tool, with the numbers this track quotes: an 84% token cut on a 100-turn evaluation, 29% from editing alone, 39% combined.
-- The harness track's [resources page](../track-harness/resources.md) holds the rest of the Anthropic canon — building effective agents, effective context engineering — which this track assumes rather than repeats.
+- [Managing context on the Claude Developer Platform](https://claude.com/blog/context-management) — context editing and the memory tool, with the numbers this handbook quotes: an 84% token cut on a 100-turn evaluation, 29% from editing alone, 39% combined.
+- The harness handbook's [resources page](../track-harness/resources.md) holds the rest of the Anthropic canon — building effective agents, effective context engineering — which this handbook assumes rather than repeats.
 
 ## Practice
 

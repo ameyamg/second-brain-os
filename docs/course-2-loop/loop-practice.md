@@ -81,3 +81,5 @@ Alert 1 never touches the model, alert 2 closes on the loop's first turn, and al
 1. Run the file, then set `MAX_TURNS = 0` and run it again. Every unfiltered alert should land in the fallback — if anything crashes instead, an exit path was missing.
 2. Make `model_next_step` return the same wrong answer forever. Confirm the spin check exits on turn two, not turn three.
 3. Add a fourth alert your filter catches, and log how many model calls the whole batch now makes. That number falling while coverage holds is the entire economics of the pattern — and deciding which decisions deserve a model at all is the next module, [cheap decisions](../course-3-gate/cheap-decisions.md).
+
+Go deeper → the [loop engineering handbook](../track-loop/what-loop-engineering-is.md): stop conditions, critics, context hygiene, and an overnight loop you can trust by morning.

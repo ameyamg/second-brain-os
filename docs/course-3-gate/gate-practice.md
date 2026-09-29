@@ -93,3 +93,5 @@ Everything returning `escalate` goes to the main model — fail closed. The full
 3. Shadow-run for a week: the gate decides but the main model still handles everything. Count the disagreements before trusting the fast path.
 
 With the gate sorting the stream, the expensive model finally has room to do its real work — the subject of the next module: [the office](../course-4-harness/the-office.md).
+
+Go deeper → the [Jev engineering handbook](../track-jev/system-one-models.md): System One models, what they are good for, and a confidence-gated router build.

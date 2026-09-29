@@ -1,6 +1,6 @@
 # Eval Resources
 
-A short list, deliberately. Everything here earns its place; everything it links to is optional. The concepts they teach map onto [why evals](why-evals.md) and the rest of this track.
+A short list, deliberately. Everything here earns its place; everything it links to is optional. The concepts they teach map onto [why evals](why-evals.md) and the rest of this handbook.
 
 ## The canon
 

@@ -120,3 +120,5 @@ Every harness piece is a bet that the model cannot do something, and the bets ex
 3. Disable one harness component, rerun a task it was meant to protect, and see whether anything actually degrades.
 
 Next: sensors deserve a module of their own — [two kinds of checks](../course-5-evals/two-kinds-of-checks.md).
+
+Go deeper → the [agent harnesses handbook](../track-harness/what-a-harness-is.md): the machinery in depth, the landscape, and a working harness in about 150 lines.

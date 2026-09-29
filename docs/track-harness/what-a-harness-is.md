@@ -4,7 +4,7 @@ A harness is everything around the model that turns text prediction into work do
 
 ## The loop
 
-At the core sits a while-loop. Send the conversation to the model. If the reply contains tool calls, run them, append the results, go round again. If it contains only text, stop and show the user. That is the whole trick — Thorsten Ball's [How to build an agent](https://ampcode.com/notes/how-to-build-an-agent) does it in under 400 lines of Go. Everything else in this track is refinement of that loop.
+At the core sits a while-loop. Send the conversation to the model. If the reply contains tool calls, run them, append the results, go round again. If it contains only text, stop and show the user. That is the whole trick — Thorsten Ball's [How to build an agent](https://ampcode.com/notes/how-to-build-an-agent) does it in under 400 lines of Go. Everything else in this handbook is refinement of that loop.
 
 ## Tool schemas
 

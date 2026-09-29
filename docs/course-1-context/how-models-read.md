@@ -25,4 +25,4 @@ The catch is severity: a cache hit requires the prefix to be 100% identical, byt
 
 ## The shape of the fix
 
-The mechanics point one way. Content that never changes belongs at the very front, where it is cheap (cached) and well attended (primacy). Content that matters right now belongs at the very end, where recency works for you. Everything large or transient belongs out of the window entirely, on disk, fetched when needed. That placement discipline is the next page, and the harness track has a [deeper treatment](../track-harness/context-engineering.md) of wiring it into a real agent.
+The mechanics point one way. Content that never changes belongs at the very front, where it is cheap (cached) and well attended (primacy). Content that matters right now belongs at the very end, where recency works for you. Everything large or transient belongs out of the window entirely, on disk, fetched when needed. That placement discipline is the next page, and the harness handbook has a [deeper treatment](../track-harness/context-engineering.md) of wiring it into a real agent.

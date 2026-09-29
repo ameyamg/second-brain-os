@@ -29,9 +29,9 @@ The same test, every month. Not a demo, not a vibe check after a prompt change â
 
 ## The map
 
-A failure in one layer wears the mask of another: missing context looks like a stupid model, a missing gate looks like runaway cost, missing evals look like nothing at all until production. Each layer gets a module of this course, and four get a deep-dive track.
+A failure in one layer wears the mask of another: missing context looks like a stupid model, a missing gate looks like runaway cost, missing evals look like nothing at all until production. Each layer gets a module of this course, and four get a deep-dive handbook.
 
-| Layer | Question | Module | Deep-dive track |
+| Layer | Question | Module | Deep-dive handbook |
 | --- | --- | --- | --- |
 | Context | What does it see? | [Module 1: how models read](../course-1-context/how-models-read.md) | Module 1 is the deep dive |
 | Loop | Who decides the next step? | [Module 2: loops vs workflows](../course-2-loop/loops-vs-workflows.md) | [What loop engineering is](../track-loop/what-loop-engineering-is.md) |

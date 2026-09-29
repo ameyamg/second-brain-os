@@ -2,7 +2,7 @@
 
 The control system around the agent: stop conditions, critics, context hygiene — and an overnight loop you can trust by morning.
 
-A compact track beside [the main guide](../../README.md) — read it on the site or in order below.
+A compact handbook beside [the main guide](../../README.md) — read it on the site or in order below.
 
 1. [What Loop Engineering Is](what-loop-engineering-is.md)
 2. [Stop Conditions](stop-conditions.md)

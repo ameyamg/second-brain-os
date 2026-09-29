@@ -27,7 +27,7 @@ Anthropic's [Advanced tool use](https://www.anthropic.com/engineering/advanced-t
 
 ## Add a summarising subagent
 
-A subagent is a context firewall. When a task requires reading fifty files, do not read them in the main window — spawn a subagent whose own window absorbs the fifty files and hands back a one-page summary. The main agent keeps the conclusion, not the evidence. The same pattern fits any bulk read: log trawls, large diffs, document piles. The [harness track](../track-harness/context-engineering.md) covers wiring firewalls into a real setup.
+A subagent is a context firewall. When a task requires reading fifty files, do not read them in the main window — spawn a subagent whose own window absorbs the fifty files and hands back a one-page summary. The main agent keeps the conclusion, not the evidence. The same pattern fits any bulk read: log trawls, large diffs, document piles. The [harness handbook](../track-harness/context-engineering.md) covers wiring firewalls into a real setup.
 
 ## Tips
 
@@ -44,3 +44,5 @@ A subagent is a context firewall. When a task requires reading fifty files, do n
 3. Run the same fifty-file summarisation once in your main window and once through a subagent; compare final context size and answer quality.
 
 Next module: [loops versus workflows](../course-2-loop/loops-vs-workflows.md).
+
+Go deeper → the [harness handbook's context engineering page](../track-harness/context-engineering.md): the same discipline wired into a real setup.

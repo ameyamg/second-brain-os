@@ -4,6 +4,9 @@ An agent does two kinds of work. It writes — summaries, plans, replies, code �
 
 This module is about the gate: a cheap decision layer that sits in front of the expensive model and sorts the stream, so the frontier model only sees the items that actually need judgement.
 
+
+A note on names: the module is called the gate, after the pattern. Its deep-dive handbook is [Jev engineering](../track-jev/system-one-models.md), after the class of System One models that most often stands in the gate — the pattern and one strong way to build it.
+
 ## Two kinds of work
 
 Watch an agent process an inbox and count the decisions. Is this spam. Is this a newsletter. Which project does it touch. Does it need a reply. Only after all of that does any writing happen — and for most items it never does; the item is filed, archived, or dropped. A frontier model answering "is this a newsletter" burns seconds and real money to produce one bit of information. The decision was worth a fraction of a cent. The writing, on the rare item that needs it, is worth the full price.

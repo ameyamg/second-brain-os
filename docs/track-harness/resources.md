@@ -33,4 +33,4 @@ Curated, not exhaustive. Everything here was checked in September 2026 and earns
 
 1. **Build the naked loop.** Work through Thorsten Ball's tutorial in your language of choice. One afternoon; permanently changes how you read framework docs.
 2. **Read two posts.** Building effective agents, then effective context engineering. Together they cover 80% of the judgement calls you will face.
-3. **Adopt one harness and instrument it.** Pick from the [landscape](harness-landscape.md), wire up a real task, and read the raw transcripts of every failure. The transcript is the curriculum; everything in this track is visible there.
+3. **Adopt one harness and instrument it.** Pick from the [landscape](harness-landscape.md), wire up a real task, and read the raw transcripts of every failure. The transcript is the curriculum; everything in this handbook is visible there.
