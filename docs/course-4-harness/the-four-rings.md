@@ -2,6 +2,9 @@
 
 Build the harness from the outside in: containment, guides, sensors, permissions. The order matters because each ring must hold when every ring inside it fails. A guide can be ignored, a sensor can miss, an approval can be misclicked; a wall does not care. So the outermost ring goes up before the first prompt is written.
 
+
+![](fig-four-rings.svg)
+
 ## Ring one: containment
 
 Containment is what the agent physically cannot reach, and it is the only ring that works with zero model cooperation. The standard kit: a container or VM rather than your laptop's shell; a throwaway branch or git worktree rather than main; a read-only database user rather than the application's credentials; a network allowlist rather than the open internet. None of this involves prompting. If you set it up before the agent's first run, the worst possible session is a discarded branch and a wasted API bill.

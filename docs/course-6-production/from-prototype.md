@@ -30,6 +30,9 @@ The single highest-leverage piece of infrastructure is a gateway — one choke p
 
 This is the pattern grown-up stacks converge on: Palantir routes all LLM access through a secure integration layer with token consumption tracking and uniform audit logging, rather than letting each application call providers directly. You do not need Palantir to copy the shape — a 200-line proxy gets you most of it.
 
+
+![](fig-production.svg)
+
 ## The path the whitepaper draws
 
 The whitepaper's production path is a lifecycle, not a launch: development (fast experimentation), staging (automated testing and simulated load), production (gradual rollout with monitoring). Releases go out as canary or blue-green deployments with instant rollback, never a 100% switch. Evaluation suites run in CI and block the deploy when scores drop — the [two kinds of checks](../course-5-evals/two-kinds-of-checks.md) from module 5 become the gate, not a dashboard. And the loop closes: production traces feed the eval set, which hardens the next release.

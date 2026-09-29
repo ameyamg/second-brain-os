@@ -138,6 +138,9 @@ def render_page(sec, fname):
     body = "\n".join(lines[1:]).strip()
     MD.reset()
     html = MD.convert(body)
+    # relative images resolve against the repo, wherever the page renders
+    html = re.sub(r'(<img[^>]+src=")(?!https?:|/|docs/)',
+                  lambda m: m.group(1) + f"docs/{sec}/", html)
     text = re.sub(r"<[^>]+>", " ", html)
     text = re.sub(r"\s+", " ", text).strip()
     headings = re.findall(r"<h2[^>]*>(.*?)</h2>", html)

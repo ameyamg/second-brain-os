@@ -2,6 +2,9 @@
 
 [How models read](how-models-read.md) established the physics: attention favours the start and end of the window, every token costs, and caching only pays when the prefix never moves. The discipline that follows is simple to state. Every piece of context belongs in exactly one of four places, and most agent problems trace back to something sitting in the wrong one.
 
+
+![](fig-four-places.svg)
+
 ## One: the system prompt
 
 Only what is true on every call. Persona, hard rules, output format — nothing else. It must be byte-stable: no timestamps, no user names, no retrieved memories, no "current task". Anything dynamic in the system prompt breaks the cache on every request (system sits above messages in the cache hierarchy) and squanders the primacy slot on content that did not need it. Treat edits to it as releases, not tweaks.

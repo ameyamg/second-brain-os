@@ -2,6 +2,9 @@
 
 Every loop that survives production has the same four parts: a goal with a testable definition of done, a checker that lives outside the model, a stop rule, and a budget counted in both turns and dollars. Remove any one and you have not simplified the loop; you have removed its brakes. This page takes each part in depth, then annotates the canonical skeleton.
 
+
+![](fig-four-parts.svg)
+
 ## A goal with a testable done
 
 "Improve the error handling" cannot terminate a loop, because nothing can ever say it is finished. "All tests under `tests/` pass and the linter reports nothing" can. The goal must be phrased so that a program — not a person, not the model — returns true or false against it. If you cannot write done as a check, you do not have a loopable task yet; you have an interactive session. Writing done as a forty-line script is a skill in itself, built concretely in [the goal test build page](../track-loop/build-goal-test.md).

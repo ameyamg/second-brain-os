@@ -12,6 +12,9 @@ Watch an agent process an inbox and count the decisions. Is this spam. Is this a
 
 A gate asks one narrow question per item and routes on the answer. The shape is always the same: everything comes in; each item gets a bounded question — one of these labels, yes or no, a score; items the gate answers confidently and routinely are handled by cheap deterministic code; anything the gate is unsure about goes through to the main model. Unsure means escalate. The gate is never the only path, only the fast one.
 
+
+![](fig-gate.svg)
+
 ## The taxonomy of gates
 
 Four tools, in rising order of cost and fallibility:

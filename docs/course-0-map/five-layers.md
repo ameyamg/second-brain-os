@@ -4,6 +4,9 @@ Think of an agent as a new employee on his first day. He is bright, fast, and kn
 
 The field talks about these layers as if they were rival schools: context engineering, loop engineering, JEV engineering, harness engineering, eval engineering. Five buzzwords, five conference tracks, five people telling you the other four are hype. They are not competing approaches. They are five layers of one system, and each answers one question: what it sees, who decides, who sorts, what it can reach, how you know.
 
+
+![](fig-five-layers.svg)
+
 ## Context: what it sees
 
 What is on his desk when he starts the task. The brief, the relevant files, the one page of history that matters — and nothing else. The model reasons only over what is in the window; everything outside it does not exist. Without this layer the agent guesses, invents plausible answers to questions it was never shown, and asks again for things it was already given. Bad context is routinely misdiagnosed as a bad model.

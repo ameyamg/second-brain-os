@@ -2,6 +2,9 @@
 
 The previous modules built an agent that plans, calls tools, and edits your vault. This one is about knowing whether it works — before your users tell you. Everything in agent evaluation rests on one distinction: checks on the outcome versus checks on the behaviour. You need both, and they answer different questions.
 
+
+![](fig-two-checks.svg)
+
 ## End-to-end checks
 
 An end-to-end check asks a single question: did the final answer come out right? Run the input, take the last message or the resulting state, score it — exact match, a rubric, a judge. This is the check users would design, because it measures the thing they experience.
