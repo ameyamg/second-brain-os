@@ -2,6 +2,8 @@
 
 First of three build pages: this one gets you from "the bot sometimes messes up" to a golden set file on disk. [Build the suite](build-suite.md) makes it runnable; the gate page wires it into CI. An afternoon covers all three. Background, if you skipped it: [why evals](why-evals.md).
 
+Arriving from [module 5's practice](../course-5-evals/evals-practice.md)? You already have twenty cases and a runner — skip collection and go straight to the taxonomy pass below; the golden set then grows out of what you have.
+
 ## Collect 30 traces
 
 Pull thirty real transcripts from production — logs, a database export, whatever exists. Real inputs beat invented ones every time. No traffic yet? Generate a starter set against your own app: write thirty questions a plausible user would ask into `starter_inputs.txt` (vary persona, phrasing, length; include a couple that should be refused), then run them through your actual entry point:

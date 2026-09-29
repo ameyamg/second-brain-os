@@ -5,6 +5,8 @@ The production pattern is not "run the agent on everything". It is filter first,
 
 > The goal-test half of this pattern is packaged as a skill: install [the course plugin](../../plugins/README.md) and run `/agents-course:goal-test`; the checker role ships as the `loop-critic` agent.
 
+One frame before the code: this build is the triage shape — filter, loop briefly, fall back. The other production shape, a loop wrapped around a coding agent and driven by a goal test, is the [loop handbook's build](../track-loop/build-goal-test.md); same four parts, different body.
+
 ## The build
 
 The whole hybrid fits in one file. It runs as-is; swap `model_next_step` for a real API call and the control flow does not change.

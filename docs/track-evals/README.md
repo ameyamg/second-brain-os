@@ -2,7 +2,7 @@
 
 Measurement as the discipline of AI products: golden sets, judges that do not lie, agent trajectories — and your first suite built in an afternoon.
 
-A compact handbook beside [the main guide](../../README.md) — read it on the site or in order below.
+The handbook for [module 5](../course-5-evals/README.md) of the agents course: the module teaches the idea once; this holds the full menu — techniques, tools and builds. Read it on the site or dip in below.
 
 1. [Why Evals](why-evals.md)
 2. [Designing Evals](designing-evals.md)

@@ -13,9 +13,9 @@ nothing to install beyond Obsidian and an agent.
 
 Three things live here — pick your entrance:
 
-- **[The second-brain guide](#the-guide)** — a knowledge base an agent maintains for you: 65 pages, a starter vault, 18 skills.
-- **[The agents course](#the-agents-course)** — seven modules from a single prompt to a production agent, with [tools you install in two commands](plugins/README.md).
-- **[The handbooks](#the-handbooks)** — five compact references on the wider craft: graphs, Jev, harnesses, loops, evals.
+- **[The second-brain guide](#the-guide)** — a path you follow once: build a knowledge base an agent maintains for you. 65 pages, a starter vault, 18 skills.
+- **[The agents course](#the-agents-course)** — a path you read in order: seven modules from a single prompt to a production agent, with [tools you install in two commands](plugins/README.md).
+- **[The handbooks](#the-handbooks)** — not a path, references: the full menu of techniques, tools and builds for one layer. Open one when that layer starts hurting.
 
 ## The problem it solves
 

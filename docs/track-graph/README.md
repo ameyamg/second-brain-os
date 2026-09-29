@@ -2,7 +2,7 @@
 
 Graphs as agent memory: GraphRAG, extraction pipelines, stores — then an evening build of a graph layer over your own vault.
 
-A compact handbook beside [the main guide](../../README.md) — read it on the site or in order below.
+A handbook beside [the main guide](../../README.md) — the full menu for one layer; dip in anywhere.
 
 1. [Why Knowledge Graphs](why-graphs.md)
 2. [GraphRAG](graphrag.md)

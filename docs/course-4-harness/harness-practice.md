@@ -5,6 +5,8 @@ Theory done; now harden a real agent. The worked example is a coding agent on a 
 
 > The audit half of this session is packaged as a skill: install [the course plugin](../../plugins/README.md) and run `/agents-course:harness-audit` before you harden by hand.
 
+One frame before the steps: this session hardens an agent you already run. Building the machinery itself from scratch — the seventy-line loop and its guardrails — is the [harness handbook's build](../track-harness/build-the-loop.md).
+
 ## Step one: build the walls
 
 Before the first prompt, decide what the agent cannot reach. Give it a worktree instead of your checkout, and a database user that can only read:

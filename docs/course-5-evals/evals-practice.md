@@ -1,6 +1,6 @@
 # Evals Practice
 
-This page is the build. One afternoon, five steps, and your agent has a fast behavioural suite, one calibrated judge, and a weekly habit that keeps both honest.
+This page is the minimal build: one afternoon, five steps, one file of cases and one runner, no infrastructure. The [eval engineering handbook](../track-evals/why-evals.md) assembles the full pipeline in three builds; everything you make here carries straight into it.
 
 
 > The whole build below is also packaged as a skill: install [the course plugin](../../plugins/README.md) and run `/agents-course:evals-bootstrap` on your agent's repo.
@@ -120,4 +120,4 @@ Every week, pull five random real runs and grade them by hand against your own e
 
 Next module: [from prototype to production](../course-6-production/from-prototype.md).
 
-Go deeper → the [eval engineering handbook](../track-evals/why-evals.md): designing evals, judges that do not lie, agent trajectories, and a CI-gated suite.
+Go deeper → the handbook's three builds, starting from the `cases.yaml` you just wrote: [read your traces](../track-evals/build-traces.md) from the taxonomy pass onwards (collection is done), [build the suite](../track-evals/build-suite.md) for the calibrated judge, and [the CI gate](../track-evals/build-ci.md). Nothing here is thrown away.

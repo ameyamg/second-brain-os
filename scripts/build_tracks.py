@@ -84,9 +84,10 @@ TRACKS = {
     },
     "track-jev": {
         "title": "Jev engineering",
-        "blurb": "Building with System One models: typed decisions with "
-                 "confidence scores instead of generated text — and a "
-                 "build you can run before your Jev access lands.",
+        "module": ("3", "course-3-gate"),
+        "blurb": "The gate is the layer; Jev is one way to build it. Typed "
+                 "decisions with confidence scores instead of generated text "
+                 "— and a build you can run before your Jev access lands.",
         "order": ["system-one-models", "what-jev-is-good-for",
                   "jev-in-an-agent-stack", "getting-started",
                   "build-decision-endpoint", "build-router",
@@ -94,6 +95,7 @@ TRACKS = {
     },
     "track-harness": {
         "title": "Agent harnesses",
+        "module": ("4", "course-4-harness"),
         "blurb": "The machinery around the model: loops, tools, context "
                  "engineering, the landscape — and a working harness in "
                  "an evening, about 150 lines.",
@@ -105,6 +107,7 @@ TRACKS = {
     },
     "track-loop": {
         "title": "Loop engineering",
+        "module": ("2", "course-2-loop"),
         "blurb": "The control system around the agent: stop conditions, "
                  "critics, context hygiene — and an overnight loop you can "
                  "trust by morning.",
@@ -115,6 +118,7 @@ TRACKS = {
     },
     "track-evals": {
         "title": "Eval engineering",
+        "module": ("5", "course-5-evals"),
         "blurb": "Measurement as the discipline of AI products: golden sets, "
                  "judges that do not lie, agent trajectories — and your "
                  "first suite built in an afternoon.",
@@ -182,12 +186,14 @@ def main():
     course_block = ('<!--COURSE--><div class="trkhead"><h2>the agents course</h2>'
                     '<p>Seven modules from a single prompt to a production '
                     'agent: theory from the whitepapers, a build in every '
-                    'module. Start at the map, finish with the day-one plan.'
+                    'module. A path — start at the map, read in order, '
+                    'finish with the day-one plan.'
                     '</p></div><div class="seclist courselist">'
                     + "".join(course_cards) + "</div><!--/COURSE-->")
     track_block = ('<!--TRACKS--><div class="trkhead"><h2>handbooks</h2>'
-                   '<p>Compact references beside the main guide: the moving '
-                   'parts of building with agents, a page at a time.</p></div>'
+                   '<p>Not a path — references. The full menu of techniques, '
+                   'tools and builds for one layer of the course; open one '
+                   'when that layer starts hurting, dip in anywhere.</p></div>'
                    '<div class="seclist tracklist">' + "".join(cards)
                    + "</div><!--/TRACKS-->")
     for marker, block in (("COURSE", course_block), ("TRACKS", track_block)):
@@ -220,10 +226,18 @@ def build_group(D, group, kind):
         # a browsable README per folder, kept in sync with the order
         toc = "\n".join(f"{n}. [{p['title']}]({os.path.basename(p['path'])})"
                         for n, p in enumerate(pages, 1))
-        label = ("A course module" if kind == "course"
-                 else "A compact handbook") + \
-            " beside [the main guide](../../README.md) — " \
-            "read it on the site or in order below."
+        if kind == "course":
+            label = ("A course module beside [the main guide](../../README.md)"
+                     " — read it on the site or in order below.")
+        elif meta.get("module"):
+            n, mdir = meta["module"]
+            label = (f"The handbook for [module {n}](../{mdir}/README.md) of "
+                     "the agents course: the module teaches the idea once; "
+                     "this holds the full menu — techniques, tools and "
+                     "builds. Read it on the site or dip in below.")
+        else:
+            label = ("A handbook beside [the main guide](../../README.md) — "
+                     "the full menu for one layer; dip in anywhere.")
         io.open(os.path.join(ROOT, "docs", sec, "README.md"), "w",
                 encoding="utf-8", newline="\n").write(
             f"# {meta['title']}\n\n{meta['blurb']}\n\n{label}\n\n{toc}\n")

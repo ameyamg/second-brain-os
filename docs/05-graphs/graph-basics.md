@@ -4,7 +4,7 @@ Your vault is a graph whether you plan it or not. Pages are nodes, wikilinks are
 edges. Every structural decision in the previous section was a decision about
 what shape that graph takes.
 
-Four terms are enough to reason about it.
+Four terms are enough to reason about it. This section is about your vault's own graph — wikilinks, shape, health. Graphs as an agent's memory in general (GraphRAG, extraction, stores) are the [knowledge graphs handbook](../track-graph/why-graphs.md).
 
 **Degree** is how many links a page has. In-degree is how many point at it,
 out-degree how many it points out. A page with zero in-degree is unreachable by

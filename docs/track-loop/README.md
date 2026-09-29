@@ -2,7 +2,7 @@
 
 The control system around the agent: stop conditions, critics, context hygiene — and an overnight loop you can trust by morning.
 
-A compact handbook beside [the main guide](../../README.md) — read it on the site or in order below.
+The handbook for [module 2](../course-2-loop/README.md) of the agents course: the module teaches the idea once; this holds the full menu — techniques, tools and builds. Read it on the site or dip in below.
 
 1. [What Loop Engineering Is](what-loop-engineering-is.md)
 2. [Stop Conditions](stop-conditions.md)

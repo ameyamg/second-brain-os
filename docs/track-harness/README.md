@@ -2,7 +2,7 @@
 
 The machinery around the model: loops, tools, context engineering, the landscape — and a working harness in an evening, about 150 lines.
 
-A compact handbook beside [the main guide](../../README.md) — read it on the site or in order below.
+The handbook for [module 4](../course-4-harness/README.md) of the agents course: the module teaches the idea once; this holds the full menu — techniques, tools and builds. Read it on the site or dip in below.
 
 1. [What a Harness Is](what-a-harness-is.md)
 2. [Claude Code as Harness](claude-code-as-harness.md)

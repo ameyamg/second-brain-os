@@ -1,8 +1,8 @@
 # Jev engineering
 
-Building with System One models: typed decisions with confidence scores instead of generated text — and a build you can run before your Jev access lands.
+The gate is the layer; Jev is one way to build it. Typed decisions with confidence scores instead of generated text — and a build you can run before your Jev access lands.
 
-A compact handbook beside [the main guide](../../README.md) — read it on the site or in order below.
+The handbook for [module 3](../course-3-gate/README.md) of the agents course: the module teaches the idea once; this holds the full menu — techniques, tools and builds. Read it on the site or dip in below.
 
 1. [System One Models](system-one-models.md)
 2. [What Jev Is Good For](what-jev-is-good-for.md)

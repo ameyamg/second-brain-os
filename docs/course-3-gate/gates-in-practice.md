@@ -26,3 +26,5 @@ The vendor claims 70–500ms end-to-end against seconds for LLM workflows, and $
 ## When logistic regression simply wins
 
 If your gate question is fixed, your domain is your own, and you can label a few hundred examples, logistic regression is free per call, runs locally, keeps your data private, is deterministic, and — on the evidence so far — loses to nothing above. Jev's genuine case is the cold start: no labels yet, many questions per item in one pass, wide option sets, or a distribution that drifts faster than you can retrain. But that case must be proven on your data, not the vendor's. Nothing enters the pipeline until it beats the thirty-minute baseline, which you build next: [gate practice](gate-practice.md).
+
+The naming, settled: the gate is the layer; Jev is one way to build it. The [Jev engineering handbook](../track-jev/system-one-models.md) is the deep dive on that way — this module stays about the layer.
