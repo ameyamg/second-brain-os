@@ -106,6 +106,7 @@ them separate matters more than it sounds.
 | [`skills/`](skills/README.md) | 18 agent skills, one per workflow in the guide |
 | [`commands/`](commands/README.md) | 72 slash commands, scoped entry points into those skills |
 | [`agents/`](agents/README.md) | 6 subagents, four of them read-only by design |
+| [`plugins/`](plugins/README.md) | Claude Code plugins — the course's tools, installable in two commands |
 | [`scripts/`](scripts/README.md) | Dependency-free Python for link checking, stats and graph export |
 | [`resources/`](resources/README.md) | Tools, repos, papers and reading worth your time |
 | [`examples/`](examples/README.md) | Real vaults and real output |
@@ -146,6 +147,15 @@ day-one plan at the end.
 | [4 · Harness](docs/course-4-harness/README.md) | containment, guides, sensors, permissions |
 | [5 · Evals](docs/course-5-evals/README.md) | behavioural checks on traces, judged judges, golden sets |
 | [6 · Production](docs/course-6-production/README.md) | gateways, tracing, cost, security, the day-one plan |
+
+The course ships its own tools as a [Claude Code plugin](plugins/README.md) —
+a context auditor, a goal-test generator, an evals bootstrapper and a loop
+critic, each doing one module's practice page in your repo:
+
+```bash
+claude plugin marketplace add undefined-ui/second-brain-os
+claude plugin install agents-course@second-brain-os
+```
 
 ## The tracks
 

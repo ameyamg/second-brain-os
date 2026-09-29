@@ -139,6 +139,31 @@ def main():
              fm_desc(os.path.join(ROOT, "skills", d, "SKILL.md")))
          for d in sk]) + "</div>")
 
+    # plugins: each plugin's skills and agents, flattened under one branch
+    plug_rows, n_plug_tools = [], 0
+    plug_root = os.path.join(ROOT, "plugins")
+    for pl in sorted(os.listdir(plug_root)):
+        pdir = os.path.join(plug_root, pl)
+        if not os.path.isdir(pdir):
+            continue
+        for d in sorted(os.listdir(os.path.join(pdir, "skills"))
+                        if os.path.isdir(os.path.join(pdir, "skills")) else []):
+            plug_rows.append(row(
+                f"/{pl}:{d}", GH + f"plugins/{pl}/skills/{d}/SKILL.md",
+                fm_desc(os.path.join(pdir, "skills", d, "SKILL.md"))))
+            n_plug_tools += 1
+        adir = os.path.join(pdir, "agents")
+        for f in sorted(os.listdir(adir)) if os.path.isdir(adir) else []:
+            if f.endswith(".md"):
+                plug_rows.append(row(
+                    f"{pl}:{f[:-3]}", GH + f"plugins/{pl}/agents/{f}",
+                    fm_desc(os.path.join(adir, f))))
+                n_plug_tools += 1
+    out.append('<div class="sec">' + branch(
+        "plugins/", GHT + "plugins",
+        "the course's tools as a Claude Code plugin, installable in "
+        "two commands", plug_rows) + "</div>")
+
     # commands, grouped
     cmd_desc = {}
     for f in os.listdir(os.path.join(ROOT, "commands")):
@@ -245,7 +270,8 @@ def main():
         + "</div>")
 
     counts = (f"{len(sk)} skills · {len(cmd_desc)} commands · "
-              f"{len(ag)} subagents · {len(py)} scripts · "
+              f"{len(ag)} subagents · {n_plug_tools} plugin tools · "
+              f"{len(py)} scripts · "
               f"{n_guide} pages of guide · {n_course} course pages · "
               f"{n_track} track pages · "
               f"{nlinks} vetted links")

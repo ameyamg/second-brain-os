@@ -2,6 +2,9 @@
 
 You know the mechanics and [the four places](the-four-places.md). This page is the working session: audit an existing agent, restructure it, and add the two upgrades that matter past a certain size.
 
+
+> The whole audit below is also packaged as a skill: install [the course plugin](../../plugins/README.md) and run `/agents-course:context-audit` in your project.
+
 ## Audit the window
 
 Do this against a real agent, not from memory.

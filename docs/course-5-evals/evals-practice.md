@@ -2,6 +2,9 @@
 
 This page is the build. One afternoon, five steps, and your agent has a fast behavioural suite, one calibrated judge, and a weekly habit that keeps both honest.
 
+
+> The whole build below is also packaged as a skill: install [the course plugin](../../plugins/README.md) and run `/agents-course:evals-bootstrap` on your agent's repo.
+
 ## Step 1: mine twenty failures into cases
 
 Pull your agent's recent runs and read until you have twenty real failures — not imagined ones. For each, write one line: what the input was, and the one specific behaviour that should have happened and did not. "Replied without searching the vault." "Refunded without asking approval." "Claimed the note was created; it was not." Twenty failures usually cluster into four to eight behaviours.

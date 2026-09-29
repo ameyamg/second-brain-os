@@ -1,0 +1,15 @@
+{
+  "name": "second-brain-os",
+  "owner": {
+    "name": "undefinedKi",
+    "url": "https://x.com/undefinedKi"
+  },
+  "description": "Plugins from the Second Brain OS repo and its agents course.",
+  "plugins": [
+    {
+      "name": "agents-course",
+      "source": "./plugins/agents-course",
+      "description": "Tools from the agents course: audit your context, write done as a script, bootstrap your eval suite, and a loop critic agent."
+    }
+  ]
+}

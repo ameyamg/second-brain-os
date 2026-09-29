@@ -1,0 +1,12 @@
+{
+  "name": "agents-course",
+  "version": "0.1.0",
+  "description": "Tools from the agents course: audit your context, write done as a script, bootstrap your eval suite, and a loop critic agent.",
+  "author": {
+    "name": "undefinedKi"
+  },
+  "homepage": "https://undefined-ui.github.io/second-brain-os/#course-0-map/what-an-agent-is",
+  "repository": "https://github.com/undefined-ui/second-brain-os",
+  "license": "MIT",
+  "keywords": ["agents", "evals", "context-engineering", "loops", "course"]
+}

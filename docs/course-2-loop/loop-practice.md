@@ -2,6 +2,9 @@
 
 The production pattern is not "run the agent on everything". It is filter first, loop briefly, fall back. Atlan's engineering write-up of its on-call agent shows the shape at scale: a deterministic, non-LLM filter suppressed roughly 86% of about 11,000 alerts in a 30-day window before a single token was spent, so only around 14% ever reached the agent; the agent then reasoned for about three cycles, and when confidence stayed below roughly 50% it escalated to a deterministic fallback workflow in plain Python. Investigations that had taken over ten minutes and a few dollars came down to about two minutes and $0.28 each. Cheap code handles the common case; the model handles the residue; a fixed path catches whatever the model cannot close.
 
+
+> The goal-test half of this pattern is packaged as a skill: install [the course plugin](../../plugins/README.md) and run `/agents-course:goal-test`; the checker role ships as the `loop-critic` agent.
+
 ## The build
 
 The whole hybrid fits in one file. It runs as-is; swap `model_next_step` for a real API call and the control flow does not change.
