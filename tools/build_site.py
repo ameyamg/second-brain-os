@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Builds site/index.html (the guide) and site/resources.html (the catalog)."""
+"""Builds resources.html (the catalog).
+
+The home page is no longer built here: index.html is the graph page, and its
+data comes from tools/build_graph_site.py. The old guide template below is kept
+for reference but never written.
+"""
 import json, os, html
 
 D = json.load(open("site_data.json"))
@@ -371,7 +376,7 @@ document.getElementById('side').addEventListener('click',e=>{{
 addEventListener('hashchange',render); render();
 </script></body></html>"""
 
-open(f"{OUT}/index.html","w").write(GUIDE)
+# index.html is the graph page now - see tools/build_graph_site.py
 
 # ---------------- resources page
 R = D["resources"]
@@ -426,5 +431,4 @@ draw();
 </script></body></html>"""
 
 open(f"{OUT}/resources.html","w").write(RES)
-print("index.html", os.path.getsize(f"{OUT}/index.html")//1024, "KB |",
-      "resources.html", os.path.getsize(f"{OUT}/resources.html")//1024, "KB")
+print("resources.html", os.path.getsize(f"{OUT}/resources.html")//1024, "KB")

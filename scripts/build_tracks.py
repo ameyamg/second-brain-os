@@ -1,19 +1,17 @@
 #!/usr/bin/env python3
-"""Inject the compact topic tracks into index.html.
+"""Sync the course and handbook READMEs with the editorial order below.
 
-The site is a single self-contained page: every guide page lives in an
-embedded JSON blob that the tiny SPA renders. This script reads the track
-markdown from docs/track-*/, renders it the same way the main guide was
-rendered, and rewrites three things in place:
-
-  1. the JSON blob        - pages, sections (flagged track:true), order
-  2. the hero tracks list - between <!--TRACKS--> and <!--/TRACKS-->
-  3. nothing else         - the SPA handles tracks generically
-
-Re-running is safe: previous track entries are replaced, not duplicated.
+COURSE and TRACKS hold each folder's title, blurb and page order. This script
+checks every listed page exists, renders it once as a sanity check, and writes
+docs/<folder>/README.md so the order on GitHub and on the site agree. The site
+reads that order back from the READMEs:
 
     pip install markdown
     python3 scripts/build_tracks.py
+    python3 tools/build_graph_site.py
+
+It used to inject the pages into the old single-file index.html; the graph
+page has its own builder now, so index.html is not touched here.
 """
 import io, json, os, re, sys
 
@@ -21,7 +19,6 @@ import markdown
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-INDEX = os.path.join(ROOT, "index.html")
 
 # the course: seven modules, three lessons each - theory, mechanics, practice.
 # Built on Google's agent whitepapers and the five-layer frame.
@@ -167,43 +164,10 @@ def render_page(sec, fname):
 
 
 def main():
-    s = io.open(INDEX, encoding="utf-8").read()
-    i = s.find('application/json">') + len('application/json">')
-    j = s.find("</script>", i)
-    D = json.loads(s[i:j])
-
-    # replace any previous course and track entries
-    gone = lambda k: k.startswith("track-") or k.startswith("course-")
-    D["pages"] = [p for p in D["pages"] if not gone(p["section"])]
-    D["sections"] = {k: v for k, v in D["sections"].items() if not gone(k)}
-    D["order"] = {k: v for k, v in D["order"].items() if not gone(k)}
-
-    course_cards = build_group(D, COURSE, "course")
-    cards = build_group(D, TRACKS, "track")
-
-    s = s[:i] + json.dumps(D, ensure_ascii=False) + s[j:]
-
-    course_block = ('<!--COURSE--><div class="trkhead"><h2>the agents course</h2>'
-                    '<p>Seven modules from a single prompt to a production '
-                    'agent: theory from the whitepapers, a build in every '
-                    'module. A path — start at the map, read in order, '
-                    'finish with the day-one plan.'
-                    '</p></div><div class="seclist courselist">'
-                    + "".join(course_cards) + "</div><!--/COURSE-->")
-    track_block = ('<!--TRACKS--><div class="trkhead"><h2>handbooks</h2>'
-                   '<p>Not a path — references. The full menu of techniques, '
-                   'tools and builds for one layer of the course; open one '
-                   'when that layer starts hurting, dip in anywhere.</p></div>'
-                   '<div class="seclist tracklist">' + "".join(cards)
-                   + "</div><!--/TRACKS-->")
-    for marker, block in (("COURSE", course_block), ("TRACKS", track_block)):
-        pat = f"<!--{marker}-->.*?<!--/{marker}-->"
-        if re.search(pat, s, re.S):
-            s = re.sub(pat, lambda m: block, s, flags=re.S)
-        else:
-            raise SystemExit(f"no <!--{marker}--> marker in index.html")
-    io.open(INDEX, "w", encoding="utf-8", newline="\n").write(s)
-    print("index.html rewritten")
+    D = {"pages": [], "sections": {}, "order": {}}
+    build_group(D, COURSE, "course")
+    build_group(D, TRACKS, "track")
+    print("READMEs synced - now run: python3 tools/build_graph_site.py")
 
 
 def build_group(D, group, kind):
