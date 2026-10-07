@@ -9,7 +9,7 @@ This repo is the full version of the guide: the concepts, the setup, the vault
 template, the agent skills, the scripts, and the resources. Free, no signup,
 nothing to install beyond Obsidian and an agent.
 
-**Read it on the web:** [undefined-ui.github.io/second-brain-os](https://undefined-ui.github.io/second-brain-os/) — the full guide with search and navigation, plus [every vetted link](https://undefined-ui.github.io/second-brain-os/resources.html) in one filterable page.
+**Read it on the web:** [secondbrainos.dev](https://secondbrainos.dev/) — the full guide with search and navigation, plus [every vetted link](https://secondbrainos.dev/resources.html) in one filterable page.
 
 Three things live here — pick your entrance:
 
@@ -179,7 +179,7 @@ build you can finish in an evening.
 | [Loop engineering](docs/track-loop/README.md) | stop conditions, critics, context hygiene, unattended runs | an overnight loop with a ratchet and a morning report |
 | [Eval engineering](docs/track-evals/README.md) | golden sets, LLM judges, agent trajectories, CI gates | your first eval suite, wired into CI |
 
-Read them on the site: [handbooks on undefined-ui.github.io](https://undefined-ui.github.io/second-brain-os/).
+Read them on the site: [handbooks on secondbrainos.dev](https://secondbrainos.dev/).
 
 ## Design decisions
 

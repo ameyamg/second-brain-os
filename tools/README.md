@@ -1,6 +1,6 @@
 # tools
 
-The site at [undefined-ui.github.io/second-brain-os](https://undefined-ui.github.io/second-brain-os/)
+The site at [secondbrainos.dev](https://secondbrainos.dev/)
 is generated from this repository, so it cannot drift from the guide.
 
 ## The home page: one graph of the whole site
