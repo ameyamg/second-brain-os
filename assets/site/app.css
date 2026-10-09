@@ -143,6 +143,10 @@ body:not(.m-overview) #veil{opacity:0}
 .hint{font:11.5px/1.8 var(--mono);color:var(--faint)}
 .hint span{color:var(--soft);border:var(--edge);border-radius:3px;padding:1px 5px;margin-right:3px;background:var(--card)}
 .hint span:not(:first-child){margin-left:10px}
+/* authorship: present, not loud */
+.by{margin-top:14px;font:11.5px/1.6 var(--mono);color:var(--faint)}
+.by a{color:var(--soft);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:color .15s,border-color .15s}
+.by a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}
 
 /* ------------------------------------------------------------ info panel */
 #info{position:fixed;z-index:15;top:66px;right:16px;bottom:16px;width:var(--info-w);overflow:auto;
@@ -313,6 +317,7 @@ body:not(.booting) #boot{opacity:0;pointer-events:none}
   #hero h1{font-size:28px}
   #hero .lede{font-size:15.5px}
   #hero .lede2,#hero .hint,#hero .stats{display:none}
+  #hero .by{margin-top:10px}
   .paths{grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:0}
   .path{display:block;padding:9px 10px;border-left-width:1px;border-top:3px solid var(--dot)}
   .path p,.path .pn{display:none}
